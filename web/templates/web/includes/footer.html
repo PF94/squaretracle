@@ -6,18 +6,13 @@
 		<div class="footer__content__left">
 			<img class="footer__content__left__logo" src="{% static 'web/img/tracle_footer.png' %}">
 			<div class="footer__content__left__copyright">
-				© Copyright 2021 TeamTracle
+				© Copyright {% now 'Y' %} TeamTracle
 			</div>
 		</div>
 		<div class="footer__content__right">
-			<a href="https://discord.gg/QZEcphY">Discord</a>
-			<a href="https://twitter.com/TracleOfficial">Twitter</a>
-			<a href="https://github.com/TeamTracle/tracle">GitHub</a>
-			<a href="https://www.buymeacoffee.com/tracle">Buy Us A Coffee</a>
-			<a href="https://teespring.com/stores/tracle">Official Merch</a>
+			<a href="https://github.com/PF94/tracle">GitHub</a>
 			<a href="{% url 'web_terms' %}">Terms Of Use</a>
 			<a href="{% url 'web_guidelines' %}">Community Guidelines</a>
-			<a href="mailto:info@tracle.tv">Contact</a>
 		</div>
 	</div>
 </div>

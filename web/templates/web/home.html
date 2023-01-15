@@ -30,38 +30,20 @@
 {% endblock css %}
 
 {% block body %}
+{% include 'web/includes/nav_new.html' %}
 <div class="container">
-	
-	{% include 'web/includes/nav.html' %}
 	{% include 'web/includes/sidebar.html' %}
 	<div class="primary">
 		{% include 'web/includes/primary_feed.html' %}
 	</div>
 	<div class="secondary">
 		<div class="alpha-banner">
-			<h2>Welcome to Tracle!</h2>
-			<a target="_blank" href="https://discord.gg/gKatcJ8">
-				<div>
-					<img src="{% static 'web/img/discord_icon.png' %}">
-					<p>Join the official discord server to share your thoughts about Tracle with us!</p>
-				</div>
-			</a>
-			<a target="_blank" href="https://github.com/TeamTracle/tracle">
+			<h2>Welcome to squareTracle!</h2>
+            <p>This may or may not be used for Qobo.</p>
+			<a target="_blank" href="https://github.com/PF94/tracle">
 				<div>
 					<img src="{% static 'web/img/github.png' %}">
-					<p>Report bugs, make suggestions or make your contribution on GitHub!</p>
-				</div>
-			</a>
-			<a target="_blank" href="https://www.buymeacoffee.com/tracle">
-				<div>
-					<img style="margin-left: 0.7em;" src="{% static 'web/img/bmc_icon.png' %}" alt="Buy us a coffee">
-					<p>Buy us a coffee!</p>
-				</div>
-			</a>
-			<a target="_blank" href="https://teespring.com/stores/tracle">
-				<div>
-					<img src="{% static 'web/img/tracle_play.png' %}">
-					<p>Buy some merch</p>
+					<p>Report bugs, make suggestions or make your contributions to the GitHub repository!</p>
 				</div>
 			</a>
 		</div>

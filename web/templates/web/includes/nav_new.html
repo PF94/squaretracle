@@ -1,0 +1,70 @@
+{% load static %}
+{% load notifications %}
+
+<nav class="nav-container">
+    <div class="nav">
+    <a href="{% url 'web_home' %}">
+        <img src="{% static 'web/img/logo.png' %}" class="picon">
+    </a>
+    <div class="menu">
+    <a href="{% url 'web_channels' %}">Browse</a>
+    </div>
+
+    <!--<div id="search-form" class="nav__search">
+        <form id="search-form" action="/results">
+            <input class="nav__search__input" type="text" name="search_terms" value="{{ search_terms }}" required>
+            <button class="btn btn-gray nav__search__submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>-->
+
+    {% if request.user.is_authenticated %}
+        <!-- <div class="nav__section">
+            <div class="nav__notifications">
+                <label for="notification-list-toggle">
+                    <i class="fas fa-bell"></i>
+                    {% if request.user|has_notification %}{% live_notify_badge %}{% endif %}
+                </label>
+                <input id="notification-list-toggle" type="checkbox">
+                <div class="nav__notifications__container">
+                    <div class="nav__notifications__header">
+                        <div class="nav__notifications__header__title">Notifications</div>
+                        <a href="/inbox/notifications" class="nav__notifications__header__all">Inbox</a>
+                    </div>
+                    {% if request.user|has_notification %}
+                        {% live_notify_list %}
+                    {% else %}
+                        <div style="padding: 1em;width: max-content;">No unread notifications.</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div id="notifications-toggle" class="nav__mobile-notifications">
+            <a href="/inbox/notifications"><i class="fas fa-bell"></i>{% if request.user|has_notification %}{% live_notify_badge %}{% endif %}</a>
+        </div> -->
+    {% endif %}
+    <div class="menu right">
+        {% if request.user.is_authenticated %}
+            <!-- <div id="navdesktopmenu-toggle" class="nav__item" onclick="navMenuDesktopToggle()"><i class="fas fa-angle-down"></i> {{ request.channel.name }}</div>
+            <div id="navdesktop-menu" class="nav__desktop-menu">
+                <div class="nav__desktop-menu__head">
+                  <a href="/channel/{{ request.channel.channel_id }}"><img src="{% if request.channel.avatar %}{{ request.channel.avatar.url }}{% else %}{% static 'web/img/avatar.png' %}{% endif %}"></a>
+                  <div class="nav__desktop-menu__head__details">
+                    <a href="/channel/{{ request.channel.channel_id }}">{{ request.channel.name }}</a>
+                    <div>{{ request.user.email }}</div>
+                    <a href="{% url 'web_dashboard_settings' %}">Manage your squareTracle Account</a>
+                  </div>
+                </div>
+                <a class="item" href="{% url 'web_channels' %}">Browse</a>
+                <a class="item" href="{% url 'web_upload_video' %}">Upload</a>
+                <a class="item" href="{% url 'web_signout' %}">Sign Out</a>
+            </div> -->
+            <a href="/channel/{{ request.channel.channel_id }}">{{ request.channel.name }}</a>
+            <a href="{% url 'web_upload_video' %}">Upload</a>
+        {% else %}
+            <a href="{% url 'web_signup' %}">Create Account</a>
+            <a href="{% url 'web_signin' %}">Sign In</a>
+        {% endif %}
+    </div>
+	<!--<div id="nav-open" class="nav__toggle" onclick="navMenuOpen()"><i class="fas fa-bars"></i></div>
+    </div>-->
+</nav>
