@@ -143,7 +143,7 @@ python-dateutil==2.8.2
     # via django-silk
 python-dotenv==0.19.2
     # via -r requirements.txt
-python-magic==0.4.25
+python-magic==0.4.27
     # via -r requirements.txt
 python-memcached==1.59
     # via -r requirements.txt
