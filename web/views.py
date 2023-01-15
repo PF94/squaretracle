@@ -116,8 +116,11 @@ class SigninView(View):
                 login(request, user)
                 user.update_last_login(request.META.get('REMOTE_ADDR'))
                 channel = queries.get_channel(user)
-                channel.update_last_login()
-                return redirect(request.GET.get('redirect_to', 'web_home'))
+                if channel is not None: # Check if there's a channel linked to the user.
+                    channel.update_last_login()
+                    return redirect(request.GET.get('redirect_to', 'web_home'))
+                else: # No channel is linked, disconnect or else the site will be in an odd buggy state.
+                    logout(request)
         return render(request, 'web/signin.html', {'form' : form})
 
 class SignoutView(View):
