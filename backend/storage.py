@@ -148,7 +148,7 @@ class BCDNStorage(Storage):
         self._account_token = account_token if account_token else settings.BUNNYCDN.get('account_token')
         self._pullzone_url = pullzone_url if pullzone_url else settings.BUNNYCDN.get('pullzone_url')
         self._DEBUG = debug if debug else settings.BUNNYCDN.get('debug')
-        self._bcdn = bunnycdn_storage.BunnyCDNStorage(self._storage_zone_name, self._access_token, self._pullzone_url, self._account_token, debug=debug)
+        self._bcdn = bunnycdn_storage.BunnyCDNStorage(self._storage_zone_name, self._access_token, self._pullzone_url, self._account_token, "uk.storage", debug=debug)
 
     def _open(self, name, mode='rb'):
         pass

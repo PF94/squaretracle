@@ -101,7 +101,7 @@ class User(PermissionsMixin, AbstractBaseUser):
     REQUIRED_FIELDS = []
 
     email = models.EmailField(max_length=255, unique=True)
-    email_confirmed = models.BooleanField(default=False)
+    email_confirmed = models.BooleanField(default=True)
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     banned = models.BooleanField(default=False)
@@ -448,7 +448,7 @@ class Video(models.Model):
         if self.image_set and self.image_set.primary_image and self.image_set.primary_image.thumbnail:
             return self.image_set.primary_image.thumbnail.url
         else:
-            return '/static/web/img/thumbnail_default.jpg'
+            return '/static/web/img/placeholder.png'
 
     def get_preview(self):
         return self.bunnyvideo.get_preview()

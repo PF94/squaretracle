@@ -104,7 +104,7 @@ def get_all_channels():
 	return Channel.objects.filter(user__banned=False)
 
 def get_channel(from_user):
-	return Channel.objects.filter(user__exact=from_user)[0]
+	return Channel.objects.filter(user__exact=from_user).first()
 
 def get_channel_by_id(channel_id):
 	try:
