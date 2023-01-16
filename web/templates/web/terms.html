@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block body %}
+{% include 'web/includes/nav_new.html' %}
 	<div class="container">
-		{% include 'web/includes/nav.html' %}
 		<div class="body">
 			<p><strong>Note: Subject to change soon</strong></p>
 
@@ -62,6 +62,6 @@
 				We advise you to read the terms, conditions and privacy policies from any website you want to link or visit.
 			</p>
 		</div>
-		{% include 'web/includes/footer.html' %}
 	</div>
+{% include 'web/includes/footer.html' %}
 {% endblock %}

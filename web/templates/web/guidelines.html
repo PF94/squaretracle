@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block body %}
+    {% include 'web/includes/nav_new.html' %}
 	<div class="container">
-		{% include 'web/includes/nav.html' %}
 		<div class="body">
 			<p><strong>Note: Subject to change soon</strong></p>
 
@@ -19,7 +19,7 @@
 
 			<h3>The Tracle rules</h3>
 			<ul>
-				<li>You must be above the age of 13 to be able to use the website.</li>
+				<li>You must be above the age of 13 to be able to register on the website.</li>
 				<li>Don’t spam.</li>
 				<li>Uploading videos with sexual acts are not allowed on the website, at all. The same also counts for animation.</li>
 				<li>Don’t attempt to brute force to an account you don’t own at all.</li>
@@ -32,6 +32,6 @@
 				Here at Tracle, we enforce our guidelines. We review flagged videos as quickly as we can, so we can take down the video accordingly. The offending account will be disciplined for breaking the Community guidelines and serious or violations which are repeated can end up with the account being terminated from Tracle. Do not try to find loopholes or lawyer your way around the simple rules.
 			</p>
 		</div>
-		{% include 'web/includes/footer.html' %}
 	</div>
+    {% include 'web/includes/footer.html' %}
 {% endblock %}

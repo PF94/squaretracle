@@ -157,7 +157,9 @@ class WatchView(View):
             else:
                 return render(request, 'web/watch.html', {'error' : 'This video is private', 'recommended_videos' : recommended_videos})
 
-        if video.get_transcoded_video().status != 'finished':
+        if video.get_transcoded_video().status == 'failed':
+            return render(request, 'web/watch.html', {'video' : video, 'error' : 'This video has unfortunately failed processing', 'recommended_videos' : recommended_videos})
+        elif video.get_transcoded_video().status != 'finished':
             return render(request, 'web/watch.html', {'video' : video, 'error' : 'This video has not finished processing yet', 'recommended_videos' : recommended_videos})
 
         if video.videostrike_set.exists():
