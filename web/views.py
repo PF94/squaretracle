@@ -287,6 +287,7 @@ class ChannelFeedView(View):
         if request.user.is_authenticated:
             subscribed = queries.is_subscribed(channel, queries.get_channel(request.user))
 
+        # FIXME: borked for some reason -grkb 1/16/2023
         if filter  == '1':
             all_qs = [ video.target_actions.public() for video in channel.videos.all() ]
             if all_qs:

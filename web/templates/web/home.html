@@ -31,22 +31,16 @@
 
 {% block body %}
 {% include 'web/includes/nav_new.html' %}
+<div class="lead">
+    <h1>Welcome to squareTracle!</h1>
+    <p>This may or may not be used for Qobo.</p>
+</div>
 <div class="container">
 	{% include 'web/includes/sidebar.html' %}
 	<div class="primary">
 		{% include 'web/includes/primary_feed.html' %}
 	</div>
 	<div class="secondary">
-		<div class="alpha-banner">
-			<h2>Welcome to squareTracle!</h2>
-            <p>This may or may not be used for Qobo.</p>
-			<a target="_blank" href="https://github.com/PF94/tracle">
-				<div>
-					<img src="{% static 'web/img/github.png' %}">
-					<p>Report bugs, make suggestions or make your contributions to the GitHub repository!</p>
-				</div>
-			</a>
-		</div>
 		{% include 'web/includes/secondary-feed.html' %}
 	</div>
 </div>

@@ -3,6 +3,18 @@
 @import 'secondary-feed';
 @import 'primary-feed';
 
+.lead {
+	background: #019d40;
+	color: white;
+	margin: -48px 0 0;
+	padding: 75px 0px 20px;
+	text-align: center;
+	p, h1 {
+		padding: 0;
+		margin: 8px 0;
+	}
+}
+
 .container {
 	position: relative;
 	display: grid;
