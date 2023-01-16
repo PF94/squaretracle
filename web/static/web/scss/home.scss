@@ -2,3 +2,32 @@
 @import 'sidebar';
 @import 'secondary-feed';
 @import 'primary-feed';
+
+.container {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"primary"
+		"secondary";
+	@media only screen and (min-width: 768px) {
+		width: 90vw;
+		grid-template-columns: 200px 1fr;
+	}
+	@media only screen and (min-width: 1280px) {
+		width: 90vw;
+		grid-template-columns: 200px 2fr 1fr;
+		grid-template-areas:
+			"sidebar primary secondary";
+	}
+}
+.primary {
+	grid-area: primary;
+}
+.secondary {
+	grid-area: secondary;
+	display: none;
+	@media only screen and (min-width: 1280px) {
+		display: block;
+	}
+}

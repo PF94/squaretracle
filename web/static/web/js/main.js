@@ -6,6 +6,32 @@ function getUrlParameter(name) {
    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 
+// GET COOKIE - https://stackoverflow.com/a/25490531
+const getCookieValue = (name) => (
+  document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+)
+
+// maybe there should be a site config cookie, so we don't have 3 separate cookies for values -grkb 1/16/2023
+const sounds_on = getCookieValue("SBSOUNDS");
+
+// PLAY SOUND (only when sounds_on is true)
+playSfx = (sound) => {
+    if (JSON.parse(sounds_on) === true) {
+		const request = new XMLHttpRequest();
+		const sfx_file = '/static/web/sounds/' + sound + '.wav';
+		request.open('GET', sfx_file)
+		request.onload = function() {
+			if (this.readyState === this.DONE) {
+				const sfx_audio = new Audio(sfx_file).play();
+				sfx_audio.catch(audio_fail => {
+					console.error("Sound file doesn't exist:", audio_fail)
+				})
+			}
+		}
+		request.send();
+    }
+}
+
 // NAV
 toggleNav = () => {
 	// e = document.getElementById("nav-menu-m");
@@ -65,7 +91,7 @@ toggleCategories = () => {
 // LIKE AND DISLIKE
 function like() {
 	const watch_id = $('#watch_id').val();
-	const csrftoken = $("[name=csrfmiddlewaretoken").val();
+	const csrftoken = $("[name=csrfmiddlewaretoken]").val();
 	const btn_like = $('#btn-like');
 	const btn_dislike = $('#btn-dislike');
 	const like_counter = $('#like-counter');
@@ -88,6 +114,7 @@ function like() {
 			like_counter.html(result['likes']);
 			dislike_counter.html(result['dislikes']);
 			updateLikebar(result['likes'], result['dislikes']);
+			playSfx("like");
 		},
 		error: function (result) {
 			console.log(result);
@@ -101,7 +128,7 @@ function like() {
 
 function dislike() {
 	const watch_id = $('#watch_id').val();
-	const csrftoken = $("[name=csrfmiddlewaretoken").val();
+	const csrftoken = $("[name=csrfmiddlewaretoken]").val();
 	const btn_like = $('#btn-like');
 	const btn_dislike = $('#btn-dislike');
 	const like_counter = $('#like-counter');
@@ -123,6 +150,7 @@ function dislike() {
 			like_counter.html(result['likes']);
 			dislike_counter.html(result['dislikes']);
 			updateLikebar(result['likes'], result['dislikes']);
+			playSfx("dislike");
 		},
 		error: function (result) {
 			console.log(result);

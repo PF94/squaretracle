@@ -30,8 +30,8 @@
 {% endblock css %}
 
 {% block body %}
+{% include 'web/includes/nav_new.html' %}
 	<div class="container">
-		{% include 'web/includes/nav.html' %}
 		{% if not video %}
 			<div class="primary">
 				<div class="video-error">
@@ -147,8 +147,8 @@
 		<div class="secondary">
 			{% include 'web/includes/secondary-feed.html' %}
 		</div>
-		{% include 'web/includes/footer.html' %}
 	</div>
+{% include 'web/includes/footer.html' %}
 	{% csrf_token %}
 	<input id="channel_id" type="hidden" value="{{ video.channel.channel_id }}">
 	<input id="watch_id" type="hidden" name="watch_id" value="{{ video.watch_id }}">
@@ -462,6 +462,7 @@
 					.then(response => {
 						this.commentText = ''
 						this.comments.unshift(response.data)
+						playSfx("comment");
 					})
 					.catch(error => {
 						console.log(error.message);
