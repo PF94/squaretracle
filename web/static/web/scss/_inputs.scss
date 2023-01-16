@@ -1,0 +1,16 @@
+/* Form inputs highlight, ported from Finalium 1 */
+
+textarea,
+input[type]:not([type=file]):not([type=submit]) {
+  border: 1px solid #D3D3D3;
+  border-radius: 4px;
+  box-shadow: 0 0 1px #D3D3D3;
+  transition: border linear 0.3s, box-shadow linear 0.3s;
+}
+
+textarea:focus,
+input[type]:not([type=file]):not([type=submit]):focus {
+  border-color: #6891e7;
+  box-shadow: 0 0 5px #6891e7;
+  outline: 0;
+}

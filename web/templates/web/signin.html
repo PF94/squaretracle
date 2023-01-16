@@ -12,18 +12,10 @@
 <script type="text/javascript" src="{% static 'web/js/main.js' %}"></script>
 
 {% block body %}
+{% include 'web/includes/nav_new.html' %}
+    
 <div class="container">
-	{% include 'web/includes/nav.html' %}
 	<div class="login__container">
-		<div class="login__header">
-			<h2>Sign in to Tracle!</h2>
-			<p><strong>Get full access to Tracle with your account:</strong></p>
-			<ul>
-				<li>Upload and share your own videos with the world</li>
-				<li>Comment on, rate, and make video responses to your favorite videos</li>
-				<li>Build playlists of favorites to watch later</li>
-			</ul>
-		</div>
 		<div class="login__form">
 			<h2>Sign in</h2>
 			<form method="post">
@@ -45,6 +37,6 @@
 			</form>
 		</div>
 	</div>
-	{% include 'web/includes/footer.html' %}
 </div>
+{% include 'web/includes/footer.html' %}
 {% endblock %}

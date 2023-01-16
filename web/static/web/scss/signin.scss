@@ -1,54 +1,33 @@
-@import 'base';
+@import 'style';
 
 
 .login {
 		&__container {
 
 			display: flex;
-			flex-direction: column;
 			justify-content: center;
-			margin: 2em 0 0 0;
-
-			@media only screen and (min-width: 1280px) {
-				margin: 5em 0 0 0;
-				flex-direction: row;
-			}
+			margin: 5em 0 0 0;
+			flex-direction: row;
 		}
-
-	&__header {
-		color: #333;
-		line-height: 2rem;
-		margin-bottom: 3em;
-
-		@media only screen and (min-width: 1280px) {
-			margin-right: 3em;
-		}
-
-		> h2 {
-			color: #666;
-		}
-
-		> ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-	}
 
 	&__form {
 		display: flex;
 		flex-direction: column;
 		min-width: 335px;
-		background-color: #f5f5f5;
+		background-color: #fff;
 		padding: 20px 25px 15px;
 		border: 1px solid #e5e5e5;
+		border-radius: 5px;
 
+		/* FIXME: Turn this into "btn-large" -grkb 1/16/2023 */
 		&__button {
-			font-size: 0.9rem;
+			font-size: 1rem;
+			height: 2.5em;
 		}
 
 		input[type=email],input[type=password] {
 			width: 100%;
+			padding: 7px 9px;
 		}
 
 		&__remember {

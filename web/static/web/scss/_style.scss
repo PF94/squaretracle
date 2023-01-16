@@ -1,11 +1,16 @@
+/* Finalium 2: An attempt at recreating openSB's dumpster fire
+that is Finalium 1, using SCSS from principia-web and
+Tracle as a basis. -grkb 1/16/2023 */
+
 @import 'button';
+@import 'inputs';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $grid: #bbb;
 $link: #00f;
 $link_active: darken($link, 17%);
-$bg: #f0f0f0;
+$bg: #f9f9f9;
 $bg_box: #eee;
 $bg_box2: #fff;
 $btn_play: #9ec59e;
@@ -15,8 +20,9 @@ $btn_text: #202020;
 body {
 	background-color: $bg;
 	font-family: "Inter", "Arial", sans-serif;
-	font-size: 11.5pt;
+	font-size: 13px;
 	margin: auto;
+	font-weight: 500;
 }
 
 a {
@@ -36,12 +42,8 @@ ul li, ol li {
 	margin-bottom: 0.7em;
 }
 
-h1 { font-size: 1.75em; }
-h2 { font-size: 1.50em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.00em; }
-h5 { font-size: 0.83em; }
-h6 { font-size: 0.67em; }
+h1, h2, h3 { font-weight: 500; }
+h4, h5, h6 { font-weight: 400; }
 
 .banner {
 	padding: 10px;
@@ -63,23 +65,21 @@ h6 { font-size: 0.67em; }
 	}
 }
 
-.top, .footer {
+.top {
 	background-color: $bg_box;
 	border-bottom: 1px solid $grid;
 	border-top: 1px solid $grid;
 	margin-top: 0px;
 	overflow: hidden;
-	padding: 10px 8px;
-}
-
-.top {
-	padding-top: 10px;
+	padding: 10px;
 	border-top: 0 !important;
 }
 
 .footer {
-	text-align: center;
-	line-height: 1.5;
+	line-height: 1.75;
+	background-color: #f1f1f1;
+	border-top: 1px solid #e8e8e8;
+	padding: 10px 30px;
 }
 
 .picon {
@@ -93,13 +93,11 @@ div.menu {
 	display: inline;
 	line-height: 32px;
 	text-align: center;
-	font-weight: bold;
 
 	a {
 		display: inline-block;
-		color: #222;
+		color: #333;
 		font-size: 1.1em;
-		font-weight: bold;
 		text-decoration: none;
 		padding: 0px 7px;
 		border-radius: 5px;
