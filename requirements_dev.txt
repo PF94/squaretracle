@@ -91,7 +91,7 @@ django-waffle==2.3.0
     # via -r requirements.txt
 djangorestframework==3.13.1
     # via -r requirements.txt
-fixedint==0.1.6
+fixedint==0.2.0
     # via -r requirements.txt
 funcy==1.17
     # via
