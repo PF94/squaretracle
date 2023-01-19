@@ -1,15 +1,13 @@
-# TRACLE - The open video platform
+# squareTracle - The open video platform
 TRACLE is an upcoming free and open source video platform. This repository contains the source code for the website.
 
 ## Contributing
 Feel free to fork and make a pull request for small changes. If you're planning to change more than a couple of lines 
 it's probably better to open an issue first.
 
-Join our [discord server](https://discord.gg/gKatcJ8)
-
 ### Installation (for development)
 
-TRACLE requires Python3, pip3, Redis with Linux. Windows is not officially supported unless if using WSL.
+squareTracle requires Python3, pip3, Redis with Linux. Windows is not officially supported unless if using WSL.
 
 On Debian-based distros, you can use this command to make sure all needed packages are installed:
 ```
