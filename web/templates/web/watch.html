@@ -148,7 +148,7 @@
 			{% include 'web/includes/secondary-feed.html' %}
 		</div>
 	</div>
-{% include 'web/includes/footer.html' %}
+{% include 'web/includes/footer_new.html' %}
 	{% csrf_token %}
 	<input id="channel_id" type="hidden" value="{{ video.channel.channel_id }}">
 	<input id="watch_id" type="hidden" name="watch_id" value="{{ video.watch_id }}">

@@ -1,0 +1,13 @@
+{% load static %}
+
+<div class="footer">
+	<img src="{% static 'web/img/tracle_footer.png' %}">
+	<p>
+		squareTracle Prototype · © Copyright {% now 'Y' %} TeamTracle |
+		<a href="https://github.com/PF94/squaretracle">GitHub</a> ·
+		<a href="{% url 'web_terms' %}">Terms Of Use</a> ·
+		<a href="{% url 'web_guidelines' %}">Community Guidelines</a>
+	</p>
+	<p><small>Running on Git commit: [placeholder]</small></p>
+	<button class="btn btn-gray" id="btn-footer-options">Options</button>
+</div>
