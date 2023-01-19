@@ -58,7 +58,7 @@
                 <a class="item" href="{% url 'web_upload_video' %}">Upload</a>
                 <a class="item" href="{% url 'web_signout' %}">Sign Out</a>
             </div> -->
-            <a href="/channel/{{ request.channel.channel_id }}">{{ request.channel.name }}</a>
+            <a href="/channel/{{ request.channel.channel_id }}" style="color:{{ request.channel.link_color }};">{{ request.channel.name }}</a>
             <a href="{% url 'web_upload_video' %}">Upload</a>
         {% else %}
             <a href="{% url 'web_signup' %}">Create Account</a>

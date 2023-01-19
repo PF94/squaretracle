@@ -140,6 +140,7 @@ class Channel(models.Model):
     last_login = models.DateTimeField(default=timezone.now)
     avatar = WrappedImageField(blank=True, null=True, storage=WrappedBCDNStorage(local_options={'location' : get_avatar_image_base_location, 'base_url' : get_avatar_image_media_url}), upload_to=get_avatar_image_location)
     verified = models.BooleanField(default=False)
+    link_color = ColorField(default="#523BB8", blank=True)
 
     user = models.ForeignKey(User, related_name='channels', on_delete=models.CASCADE)
 

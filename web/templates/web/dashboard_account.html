@@ -13,6 +13,11 @@
 			</div>
 			<div class="dashboard__primary">
 				<h2 class="dashboard__title">Account settings</h2>
+				<div class="thumb-container">
+					<img :src="img">
+					<button id="show-modal" class="btn btn-gray btn-crop-image" @click="showModal = !showModal">Edit</button>
+				</div>
+				<p><a href="{% url 'web_forgot_password' %}">Change password</a></p>
 				<form method="post" enctype="multipart/form-data">
 					{% csrf_token %}
 					{% if form.subject.errors %}
@@ -28,19 +33,18 @@
 					</p>
 					<p>
 						<label for="id_channel_name">Channel Name:</label><br/>
-						{{ form.channel_name }} {{ form.channel_name.errros }}
+						{{ form.channel_name }} {{ form.channel_name.errors }}
 					</p>
 					<p>
 						<label for="id_description">Description:</label><br/>
 						{{ form.description }} {{ form.description.errors }}
 					</p>
+					<p>
+						<label for="id_color">Color:</label><br/>
+						{{ form.link_color }} {{ form.link_color.errors }}
+					</p>
 					<input class="btn btn-blue" type="submit" name="submit" value="Save">
 				</form>
-				<div class="thumb-container">
-					<img :src="img">
-					<button id="show-modal" class="btn btn-gray btn-crop-image" @click="showModal = !showModal">Edit</button>
-				</div>
-				<p><a href="{% url 'web_forgot_password' %}">Change password</a></p>
 			</div>
 
 		</div>

@@ -2,10 +2,11 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import GroupAdmin
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth. admin import UserAdmin as BaseUserAdmin
 from django.contrib.admin.models import LogEntry
 from django.forms import ModelForm
 from django.utils.html import format_html
+from colorfield.fields import ColorField
 
 from .forms import UserAdminChangeForm, UserAdminCreationForm
 from .models import Channel, Video, Category, Comment, CommentTicket, VideoTicket, VideoStrike
@@ -142,8 +143,8 @@ class VideoAdmin(admin.ModelAdmin):
 class ChannelAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
-    readonly_fields = ('name', 'view_channel_on_site', 'description', 'created', 'last_login', 'avatar', 'user', 'show_url')
-    fields = ('name', 'view_channel_on_site', 'description', 'created', 'last_login', 'avatar', 'verified', ('user', 'show_url'))
+    readonly_fields = ('name', 'view_channel_on_site', 'description', 'created', 'last_login', 'avatar', 'user', 'show_url', 'link_color')
+    fields = ('name', 'view_channel_on_site', 'description', 'created', 'last_login', 'avatar', 'verified', ('user', 'show_url'), 'link_color')
 
     inlines = [VideoStrikesInline]
 

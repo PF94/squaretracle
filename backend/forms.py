@@ -141,10 +141,12 @@ class ChangeUserForm(forms.Form):
     email = forms.EmailField(required=False, widget=forms.EmailInput(attrs={'disabled' : True}))
     channel_name = forms.CharField()
     description = forms.CharField(required=False, max_length=5000, widget=forms.Textarea())
+    link_color = forms.CharField(widget=forms.TextInput(attrs={'type' : 'color'}), validators=[color_hex_validator], initial='#CCCCCC')
 
     def save(self, instance):
         instance.name = self.cleaned_data['channel_name']
         instance.description = self.cleaned_data['description']
+        instance.link_color = self.cleaned_data['link_color']
         instance.save()
         return instance
 

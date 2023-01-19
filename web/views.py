@@ -204,12 +204,12 @@ class DashboardSettingsView(DashboardBaseView):
 
     def get(self, request):
         channel = queries.get_channel(request.user)
-        form = ChangeUserForm({'email' : request.user.email, 'channel_name' : channel.name, 'description' : channel.description})
+        form = ChangeUserForm({'email' : request.user.email, 'channel_name' : channel.name, 'description' : channel.description, 'link_color': channel.link_color})
         return render(request, 'web/dashboard_account.html', {'form' : form, 'channel' : channel})
 
     def post(self, request):
         channel = queries.get_channel(request.user)
-        form = ChangeUserForm({'email' : request.user.email, 'channel_name' : request.POST.get('channel_name'), 'description' : request.POST.get('description')})
+        form = ChangeUserForm({'email' : request.user.email, 'channel_name' : request.POST.get('channel_name'), 'description' : request.POST.get('description'), 'link_color' : request.POST.get('link_color')})
         context = {'form' : form, 'channel' : channel}
         if form.is_valid():
             form.save(channel)
