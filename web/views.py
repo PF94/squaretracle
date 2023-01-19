@@ -8,7 +8,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.conf import settings
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.core.paginator import Paginator
@@ -89,7 +89,7 @@ class ActivateView(View):
 
     def get(self, request, key, token):
         try:
-            uid = force_text(urlsafe_base64_decode(key))
+            uid = force_str(urlsafe_base64_decode(key))
             user = queries.get_user(pk=uid)
         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
