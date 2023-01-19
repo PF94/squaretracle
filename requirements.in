@@ -17,7 +17,7 @@ django-rq
 django-imagekit
 requests
 django-cacheops
-python-memcached
+pymemcache
 bunnycdn-storage
 bunnyapi
 bleach

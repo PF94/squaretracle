@@ -92,13 +92,13 @@ psutil==5.9.0
     # via -r requirements.in
 psycopg2-binary==2.9.3
     # via -r requirements.in
+pymemcache==4.0.0
+    # via -r requirements.in
 pyparsing==3.0.7
     # via packaging
 python-dotenv==0.19.2
     # via -r requirements.in
 python-magic==0.4.27
-    # via -r requirements.in
-python-memcached==1.59
     # via -r requirements.in
 pytz==2021.3
     # via djangorestframework
@@ -127,7 +127,6 @@ six==1.16.0
     #   django-imagekit
     #   django-simple-captcha
     #   libsass
-    #   python-memcached
 sqlparse==0.4.2
     # via django
 ua-parser==0.10.0
