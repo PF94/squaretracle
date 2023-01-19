@@ -66,7 +66,7 @@ django-waffle==2.3.0
     # via -r requirements.in
 djangorestframework==3.13.1
     # via -r requirements.in
-fixedint==0.1.6
+fixedint==0.2.0
     # via -r requirements.in
 funcy==1.17
     # via django-cacheops
