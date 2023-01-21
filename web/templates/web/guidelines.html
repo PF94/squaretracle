@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block body %}
+    {% include 'web/includes/nav_new.html' %}
 	<div class="container">
-		{% include 'web/includes/nav.html' %}
 		<div class="body">
 			<p><strong>Note: Subject to change soon</strong></p>
 
@@ -34,6 +34,6 @@
 				Serious or repeat violations can result in the offending account being terminated.
 			</p>
 		</div>
-		{% include 'web/includes/footer.html' %}
 	</div>
+    {% include 'web/includes/footer_new.html' %}
 {% endblock %}
