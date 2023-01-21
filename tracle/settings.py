@@ -72,6 +72,8 @@ SESSION_ENGINE = 'qsessions.backends.db'
 
 if DEBUG and 'debug_toolbar' in INSTALLED_APPS:
     MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+    MIDDLEWARE.insert(0, 'silk.middleware.SilkyMiddleware')
+    INSTALLED_APPS.insert(0, 'silk')
     INTERNAL_IPS = ['127.0.0.1']
 
 TEMPLATES = [
