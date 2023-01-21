@@ -11,12 +11,13 @@ squareTracle requires Python3, pip3, Redis with Linux. Windows is not officially
 
 On Debian-based distros, you can use this command to make sure all needed packages are installed:
 ```
-sudo apt install git python3-venv python3-dev build-essential redis-server
+sudo apt install git python3-venv python3-dev build-essential redis-server memcached
 ```
 
-If using WSL, The Redis server will need to be manually started.
+If using WSL, The Redis server and Memcached services will need to be manually started.
 ```
 sudo service redis-server start
+sudo service memcached start
 ```
 
 Open a terminal and clone the repository, and then change your working directory to the root of the repository, e.g.
