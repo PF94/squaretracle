@@ -14,7 +14,7 @@ async-timeout==4.0.2
     #   redis
 autopep8==2.0.1
     # via django-silk
-bleach==5.0.1
+bleach==6.0.0
     # via -r requirements.txt
 bunnyapi==0.1.1
     # via -r requirements.txt
@@ -172,8 +172,6 @@ sqlparse==0.4.3
     #   django
     #   django-debug-toolbar
     #   django-silk
-tomli==2.0.1
-    # via autopep8
 ua-parser==0.16.1
     # via
     #   -r requirements.txt
