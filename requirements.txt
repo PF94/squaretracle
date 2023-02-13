@@ -59,7 +59,7 @@ django-qsessions==1.1.4
     # via -r requirements.in
 django-ranged-response==0.2.0
     # via django-simple-captcha
-django-rq==2.6.0
+django-rq==2.7.0
     # via -r requirements.in
 django-simple-captcha==0.5.17
     # via -r requirements.in
