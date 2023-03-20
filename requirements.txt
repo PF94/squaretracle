@@ -38,7 +38,7 @@ django-appconf==1.0.5
     #   -r requirements.in
     #   django-compressor
     #   django-imagekit
-django-cacheops==6.1
+django-cacheops==7.0
     # via -r requirements.in
 django-colorfield==0.8.0
     # via -r requirements.in
@@ -117,7 +117,6 @@ shutilwhich==1.1.0
 six==1.16.0
     # via
     #   bleach
-    #   django-cacheops
     #   django-imagekit
 sqlparse==0.4.3
     # via django

@@ -53,7 +53,7 @@ django-appconf==1.0.5
     #   -r requirements.txt
     #   django-compressor
     #   django-imagekit
-django-cacheops==6.1
+django-cacheops==7.0
     # via -r requirements.txt
 django-colorfield==0.8.0
     # via -r requirements.txt
@@ -164,7 +164,6 @@ six==1.16.0
     # via
     #   -r requirements.txt
     #   bleach
-    #   django-cacheops
     #   django-imagekit
 sqlparse==0.4.3
     # via
@@ -172,8 +171,6 @@ sqlparse==0.4.3
     #   django
     #   django-debug-toolbar
     #   django-silk
-tomli==2.0.1
-    # via autopep8
 ua-parser==0.16.1
     # via
     #   -r requirements.txt
