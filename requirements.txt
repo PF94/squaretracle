@@ -6,8 +6,6 @@
 #
 asgiref==3.6.0
     # via django
-async-timeout==4.0.2
-    # via redis
 bleach==5.0.1
     # via -r requirements.in
 bunnyapi==0.1.1
@@ -98,7 +96,7 @@ pytz==2022.7.1
     # via djangorestframework
 rcssmin==1.1.1
     # via django-compressor
-redis==4.4.2
+redis==4.5.3
     # via
     #   django-cacheops
     #   django-rq
