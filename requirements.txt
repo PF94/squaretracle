@@ -119,7 +119,7 @@ six==1.16.0
     #   bleach
     #   django-cacheops
     #   django-imagekit
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via django
 ua-parser==0.16.1
     # via user-agents

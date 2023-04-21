@@ -166,14 +166,12 @@ six==1.16.0
     #   bleach
     #   django-cacheops
     #   django-imagekit
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via
     #   -r requirements.txt
     #   django
     #   django-debug-toolbar
     #   django-silk
-tomli==2.0.1
-    # via autopep8
 ua-parser==0.16.1
     # via
     #   -r requirements.txt
